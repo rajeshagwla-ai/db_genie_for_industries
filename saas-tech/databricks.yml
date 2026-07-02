@@ -1,0 +1,30 @@
+# Declarative Automation Bundle configuration, more info here: https://docs.databricks.com/en/dev-tools/bundles/settings.html
+bundle:
+  name: "saas-tech"
+  engine: direct
+
+include:
+  - resources/*.yml
+  - resources/*/*.yml
+
+variables:
+  warehouse_id:
+    description: The ID of an existing SQL Warehouse.
+    default: "WAREHOUSE_ID"
+  catalog:
+    description: The catalog to create the datasets inside of.
+    default: "CATALOG"
+  schema:
+    description: The schema to create the datasets inside of.
+    default: "SCHEMA"
+  workspace_id:
+    description: Your workspace ID
+    default: "WORKSPACE_ID"
+
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://${var.workspace_id}.cloud.databricks.com
