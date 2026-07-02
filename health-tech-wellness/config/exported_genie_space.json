@@ -1,0 +1,460 @@
+{
+  "version": 2,
+  "data_sources": {
+    "tables": [
+      {
+        "identifier": "serverless_91bj8f_ajb_catalog.core.diagnoses",
+        "column_configs": [
+          {
+            "column_name": "diagnosis_date",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "diagnosis_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "diagnosis_type",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "encounter_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "icd10_code",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "icd10_description",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "onset_date",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "patient_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "provider_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "resolution_date",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "status",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          }
+        ]
+      },
+      {
+        "identifier": "serverless_91bj8f_ajb_catalog.core.lab_results",
+        "column_configs": [
+          {
+            "column_name": "abnormal_flag",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "encounter_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "lab_name",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "loinc_code",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "patient_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "provider_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "reference_range_high",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "reference_range_low",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "result_date",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "result_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "result_unit",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "result_value",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "specimen_type",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "test_name",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          }
+        ]
+      },
+      {
+        "identifier": "serverless_91bj8f_ajb_catalog.core.patients",
+        "column_configs": [
+          {
+            "column_name": "address_line1",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "address_line2",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "city",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "created_at",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "date_of_birth",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "email",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "employer_group_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "ethnicity",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "first_name",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "gender",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "insurance_member_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "last_name",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "patient_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "payer_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "phone_number",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "primary_care_provider_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "race",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "state",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "zip_code",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          }
+        ]
+      },
+      {
+        "identifier": "serverless_91bj8f_ajb_catalog.wellness.cgm_readings",
+        "column_configs": [
+          {
+            "column_name": "device_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "device_type",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "glucose_mg_dl",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "glucose_mmol_l",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "is_calibration",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "patient_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "reading_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "reading_timestamp",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "signal_strength",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "trend_arrow",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          }
+        ]
+      },
+      {
+        "identifier": "serverless_91bj8f_ajb_catalog.wellness.nutrition_logs",
+        "column_configs": [
+          {
+            "column_name": "calories",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "carbohydrates_g",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "data_source",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "fat_g",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "fiber_g",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "food_item",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "glycemic_index",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "log_date",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "log_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "meal_type",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "patient_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "protein_g",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "saturated_fat_g",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "sodium_mg",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "sugar_g",
+            "enable_format_assistance": true
+          }
+        ]
+      },
+      {
+        "identifier": "serverless_91bj8f_ajb_catalog.wellness.wellness_surveys",
+        "column_configs": [
+          {
+            "column_name": "diet_quality",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "employer_group_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "energy_level",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "exercise_adherence",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "medication_adherence",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "mood_score",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "pain_level",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "patient_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "response_json",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "sleep_quality",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "stress_level",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "survey_date",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "survey_id",
+            "enable_format_assistance": true
+          },
+          {
+            "column_name": "survey_type",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          }
+        ]
+      }
+    ]
+  },
+  "instructions": {
+    "text_instructions": [
+      {
+        "id": "01f162d4f0c61e0eaf95a9e7b9a77805",
+        "content": [
+          "You are a population health analytics assistant for B.Well Connected Health.  \n",
+          "  Your job is to help wellness directors and population health managers identify\n",
+          "  members who are trending toward worse health outcomes before they become      \n",
+          "  expensive for the health system.\n",
+          "                                                                                \n",
+          "  ## TABLE RELATIONSHIPS                                                        \n",
+          "  - wearable_daily_summary.patient_id \u2192 patients.patient_id\n",
+          "  - cgm_readings.patient_id \u2192 patients.patient_id                               \n",
+          "  - nutrition_logs.patient_id \u2192 patients.patient_id         \n",
+          "  - wellness_surveys.patient_id \u2192 patients.patient_id\n",
+          "  - diagnoses.patient_id \u2192 patients.patient_id                                  \n",
+          "  - lab_results.patient_id \u2192 patients.patient_id\n",
+          "                                                                                \n",
+          "  ## KEY DEFINITIONS                                        \n",
+          "\n",
+          "  ### Diabetic patient\n",
+          "  Has at least one diagnosis where icd10_code starts with 'E11'.\n",
+          "                                                                                \n",
+          "  ### Metabolic Risk Score\n",
+          "  A member is at HIGH metabolic risk if they meet 2 or more of the following:   \n",
+          "  - Average daily step count < 5,000 over the last 30 days                      \n",
+          "    (from wearable_daily_summary.step_count)\n",
+          "  - Average sleep < 360 minutes/night over the last 30 days                     \n",
+          "    (from wearable_daily_summary.sleep_duration_min)        \n",
+          "  - Average stress score > 65 over the last 30 days                             \n",
+          "    (from wearable_daily_summary.stress_score, scale 0-100) \n",
+          "  - Average daily sugar intake > 50g over the last 30 days                      \n",
+          "    (from nutrition_logs.sugar_g, summed per day)                               \n",
+          "  - Self-reported medication adherence = false in most recent survey            \n",
+          "    (from wellness_surveys.medication_adherence)                                \n",
+          "                                                                                \n",
+          "  ### Glucose Variability (CGM)                             \n",
+          "  For patients with CGM data (cgm_readings table):                              \n",
+          "  - Time-in-range (TIR): % of readings where glucose_mg_dl BETWEEN 70 AND 180\n",
+          "    - Good control: TIR > 70%                                                   \n",
+          "    - At risk: TIR between 50% and 70%                                          \n",
+          "    - Poor control: TIR < 50%                                                   \n",
+          "  - High variability: standard deviation of glucose_mg_dl > 40 mg/dL            \n",
+          "    over any 14-day window                                                      \n",
+          "   \n",
+          "  ### Healthy Activity Thresholds                                               \n",
+          "  - Active: avg step_count > 7,500/day                      \n",
+          "  - Moderately active: 5,000\u20137,500/day                                          \n",
+          "  - Sedentary: < 5,000/day                                                      \n",
+          "   \n",
+          "  ### Wellness Survey Scores                                                    \n",
+          "  All survey scores (stress_level, energy_level, sleep_quality, mood_score,\n",
+          "  diet_quality, exercise_adherence) are on a 1\u201310 scale.                        \n",
+          "  pain_level is 0\u201310. Higher scores = better for all fields except pain_level.  \n",
+          "  medication_adherence is boolean (true = taking medications as prescribed).    \n",
+          "                                                                                \n",
+          "  ### Employer Group Analytics                                                  \n",
+          "  employer_group_id on patients and wearable_daily_summary links members to     \n",
+          "  their employer. Use this for participation rate and risk segmentation by      \n",
+          "  group."
+        ]
+      }
+    ]
+  }
+}

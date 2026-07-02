@@ -1,0 +1,20 @@
+bundle:
+  name: health-tech-wellness
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog:
+    description: "The Unity Catalog catalog where tables will be created (e.g., 'main')"
+  schema:
+    description: "The schema where tables will be created (e.g., 'health_tech')"
+  warehouse_id:
+    description: "The SQL warehouse ID. Find it in SQL Warehouses > your warehouse > Connection Details"
+
+targets:
+  dev:
+    mode: development
+    default: true
+  prod:
+    mode: production

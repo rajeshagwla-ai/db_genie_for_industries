@@ -1,0 +1,34 @@
+resources:
+  jobs:
+    health_tech_wellness:
+      name: "Health Tech Wellness - Setup & Deploy"
+
+      parameters:
+        - name: catalog
+          default: ${var.catalog}
+        - name: schema
+          default: ${var.schema}
+
+      tasks:
+        - task_key: generate_data
+          notebook_task:
+            notebook_path: ../notebooks/02_generate_data.py
+            base_parameters:
+              catalog: ${var.catalog}
+              schema: ${var.schema}
+
+        - task_key: deploy_genie_space
+          depends_on:
+            - task_key: generate_data
+          environment_key: default
+          spark_python_task:
+            python_file: ../src/deploy_genie_space.py
+            parameters:
+              - ${var.catalog}
+              - ${var.schema}
+              - ${var.warehouse_id}
+
+      environments:
+        - environment_key: default
+          spec:
+            environment_version: "4"
