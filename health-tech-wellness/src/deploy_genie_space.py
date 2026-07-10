@@ -1,5 +1,5 @@
 """
-Deploy the 'Wellness - Lifestyle Risk & Population Health' Genie space.
+Deploy the 'Population Health & Care Quality Analytics' Genie space.
 Creates the space if it doesn't exist, updates it if it does.
 Sets permissions so all workspace users can interact with it.
 """
@@ -17,7 +17,7 @@ def main() -> None:
     schema = sys.argv[2].strip()
     warehouse_id = sys.argv[3].strip()
 
-    SPACE_TITLE = "Wellness - Lifestyle Risk & Population Health"
+    SPACE_TITLE = "Population Health & Care Quality Analytics"
 
     # --- Load the exported serialized_space.json ---
     script_dir = os.path.dirname(os.path.abspath(__file__))
