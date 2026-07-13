@@ -1,0 +1,1270 @@
+{
+  "version": 2,
+  "config": {
+    "sample_questions": [
+      {
+        "id": "30c4ea8ccae9e2d88fa5c5dd1d6b6dd2",
+        "question": [
+          "What is the cost per signup by marketing channel for each product?"
+        ]
+      },
+      {
+        "id": "49c426355e98d48e157577c6c69ed64b",
+        "question": [
+          "What percentage of support tickets are bug-related in the first 3 weeks after each product's launch date?"
+        ]
+      },
+      {
+        "id": "7ce9683a07e4db01b5f0ccae725ace59",
+        "question": [
+          "What is the NPS score by product and how has it changed quarter over quarter?"
+        ]
+      },
+      {
+        "id": "c3b9fc969871deb1ff049871cdfef66e",
+        "question": [
+          "What is the week-over-week WAU growth by product over the last 90 days?"
+        ]
+      },
+      {
+        "id": "fe23bdc41fe5471b5f83d354bbfc14a9",
+        "question": [
+          "What is the total pipeline value by stage for products launched in the last 6 months?"
+        ]
+      }
+    ]
+  },
+  "data_sources": {
+    "tables": [
+      {
+        "identifier": "CATALOG.SCHEMA.dim_products",
+        "column_configs": [
+          {
+            "column_name": "launch_date",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "product_id",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "product_name",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "product_tier",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "status",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "target_segment",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          }
+        ]
+      },
+      {
+        "identifier": "CATALOG.SCHEMA.fct_accounts",
+        "column_configs": [
+          {
+            "column_name": "account_created_date",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "account_id",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "account_name",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "arr",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "contract_renewal_date",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "csm_owner",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "industry",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "plan_tier",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "region",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          }
+        ]
+      },
+      {
+        "identifier": "CATALOG.SCHEMA.fct_feature_adoption",
+        "column_configs": [
+          {
+            "column_name": "account_id",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "daily_active_users",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "event_date",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "first_used_date",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "product_id",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "total_events",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "weekly_active_users",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          }
+        ]
+      },
+      {
+        "identifier": "CATALOG.SCHEMA.fct_marketing_campaigns",
+        "column_configs": [
+          {
+            "column_name": "campaign_id",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "campaign_name",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "channel",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "clicks",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "end_date",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "impressions",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "product_id",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "signups",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "spend",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "start_date",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          }
+        ]
+      },
+      {
+        "identifier": "CATALOG.SCHEMA.fct_nps_surveys",
+        "column_configs": [
+          {
+            "column_name": "account_id",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "response_id",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "score",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "segment",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "survey_date",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "verbatim",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          }
+        ]
+      },
+      {
+        "identifier": "CATALOG.SCHEMA.fct_opportunities",
+        "column_configs": [
+          {
+            "column_name": "account_id",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "amount",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "close_date",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "created_date",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "opportunity_id",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "product_id",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "source",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "stage",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          }
+        ]
+      },
+      {
+        "identifier": "CATALOG.SCHEMA.fct_support_tickets",
+        "column_configs": [
+          {
+            "column_name": "account_id",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "category",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "created_date",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "csat_score",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "priority",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "product_id",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "resolved_date",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          },
+          {
+            "column_name": "ticket_id",
+            "enable_format_assistance": true,
+            "enable_entity_matching": true
+          }
+        ]
+      }
+    ]
+  },
+  "instructions": {
+    "text_instructions": [
+      {
+        "id": "26db587b2e5a1aaee06e41453d6a3851",
+        "content": [
+          "## PURPOSE\n",
+          "- Answer go-to-market, adoption, pipeline, support, and NPS questions for a B2B SaaS portfolio.\n",
+          "- Audience: executives, growth/marketing, product managers, and customer success teams.\n",
+          "## DISAMBIGUATION\n",
+          "- 'Active users' always refers to the `weekly_active_users` column in fct_feature_adoption \u2014 do not infer or redefine this metric.\n",
+          "- 'Launched products' means products whose `launch_date` in dim_products is on or before today; filter by `status` if the user specifies active or inactive products.\n",
+          "- 'Recently launched' defaults to the last 90 days from today unless the user specifies a different window \u2014 confirm with the user if ambiguous.\n",
+          "- All quarters and years are calendar-based (Jan\u2013Mar = Q1, etc.). There is no fiscal calendar.\n",
+          "- NPS does not carry a direct product identifier; it must be linked to products via account_id through fct_accounts.\n",
+          "- When the user asks about 'pipeline' without specifying a stage, return all stages and let the user filter.\n",
+          "- When the user asks about 'bug tickets' without a time window, default to the first 3 weeks post-launch per product.\n",
+          "## DATA QUALITY NOTES\n",
+          "- fct_nps_surveys has no product_id column; product-level NPS requires joining through fct_accounts.\n",
+          "- dim_products contains exactly 10 products \u2014 results with more than 10 distinct products indicate a data issue.\n",
+          "- fct_opportunities has 3 distinct source values and 6 distinct stage values; treat unexpected values as data anomalies.\n",
+          "- Row counts for fct_feature_adoption, fct_accounts, fct_marketing_campaigns, fct_nps_surveys, and fct_support_tickets are unknown \u2014 flag if aggregates appear unexpectedly low.\n",
+          "## CONSTRAINTS\n",
+          "- Never display the `verbatim` column from fct_nps_surveys \u2014 it may contain sensitive free-text customer feedback.\n",
+          "- Never display `csm_owner` as a filterable dimension in public-facing summaries without confirming the audience.\n",
+          "- Do not expose raw `account_name` in cross-functional views unless the user explicitly requests account-level detail.\n",
+          "## Instructions you must follow when providing summaries\n",
+          "- Round all currency amounts (ARR, pipeline `amount`, campaign `spend`) to the nearest whole dollar.\n",
+          "- Round NPS scores to one decimal place; round cost-per-signup to two decimal places.\n",
+          "- Always note when NPS data is attributed to a product indirectly (via account linkage) rather than from a direct product survey.\n",
+          "- When showing WoW growth rates, flag any week with fewer than 7 days of data (e.g., partial current week) as potentially incomplete.\n"
+        ]
+      }
+    ],
+    "example_question_sqls": [
+      {
+        "id": "00c6e6b8934bbe6fa0505167991ac38f",
+        "question": [
+          "What is the cost per signup by marketing channel for the product with ID P001?"
+        ],
+        "sql": [
+          "SELECT\n",
+          "  p.product_name,\n",
+          "  mc.channel,\n",
+          "  SUM(mc.spend) AS total_spend,\n",
+          "  SUM(mc.signups) AS total_signups,\n",
+          "  ROUND(SUM(mc.spend) / NULLIF(SUM(mc.signups), 0), 2) AS cost_per_signup\n",
+          "FROM CATALOG.SCHEMA.fct_marketing_campaigns mc\n",
+          "JOIN CATALOG.SCHEMA.dim_products p\n",
+          "  ON mc.product_id = p.product_id\n",
+          "WHERE mc.product_id = :product_id\n",
+          "GROUP BY p.product_name, mc.channel\n",
+          "ORDER BY cost_per_signup ASC"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "type_hint": "STRING",
+            "description": [
+              "The product ID to filter marketing campaign cost-per-signup analysis."
+            ],
+            "default_value": {
+              "values": [
+                "P001"
+              ]
+            }
+          }
+        ],
+        "usage_guidance": [
+          "Use for cost-per-signup efficiency analysis by marketing channel for a specific product."
+        ]
+      },
+      {
+        "id": "02503a116f41c9a9f298162edb27c76d",
+        "question": [
+          "What share of support tickets are bug-related in the first 3 weeks after each product's launch?"
+        ],
+        "sql": [
+          "WITH post_launch_tickets AS (\n",
+          "  SELECT\n",
+          "    p.product_name,\n",
+          "    p.launch_date,\n",
+          "    st.category,\n",
+          "    st.ticket_id\n",
+          "  FROM CATALOG.SCHEMA.fct_support_tickets st\n",
+          "  JOIN CATALOG.SCHEMA.dim_products p\n",
+          "    ON st.product_id = p.product_id\n",
+          "  WHERE st.created_date BETWEEN p.launch_date AND p.launch_date + INTERVAL 21 DAYS\n",
+          ")\n",
+          "SELECT\n",
+          "  product_name,\n",
+          "  COUNT(ticket_id) AS total_tickets,\n",
+          "  SUM(CASE WHEN LOWER(category) = 'bug' THEN 1 ELSE 0 END) AS bug_tickets,\n",
+          "  ROUND(\n",
+          "    100.0 * SUM(CASE WHEN LOWER(category) = 'bug' THEN 1 ELSE 0 END) / NULLIF(COUNT(ticket_id), 0), 2\n",
+          "  ) AS bug_ticket_share_pct\n",
+          "FROM post_launch_tickets\n",
+          "GROUP BY product_name\n",
+          "ORDER BY bug_ticket_share_pct DESC"
+        ],
+        "usage_guidance": [
+          "Use for post-launch support quality analysis, specifically bug ticket share in the first 3 weeks after launch."
+        ]
+      },
+      {
+        "id": "03dbec1e2f9a9f2eb83fd62d759f46fb",
+        "question": [
+          "What is the week-over-week WAU growth by product over the last 90 days?"
+        ],
+        "sql": [
+          "WITH weekly_wau AS (\n",
+          "  SELECT\n",
+          "    p.product_name,\n",
+          "    DATE_TRUNC('week', fa.event_date) AS week_start,\n",
+          "    SUM(fa.weekly_active_users) AS total_wau\n",
+          "  FROM CATALOG.SCHEMA.fct_feature_adoption fa\n",
+          "  JOIN CATALOG.SCHEMA.dim_products p\n",
+          "    ON fa.product_id = p.product_id\n",
+          "  WHERE fa.event_date >= CURRENT_DATE - INTERVAL 90 DAYS\n",
+          "  GROUP BY p.product_name, DATE_TRUNC('week', fa.event_date)\n",
+          "),\n",
+          "wow AS (\n",
+          "  SELECT\n",
+          "    product_name,\n",
+          "    week_start,\n",
+          "    total_wau,\n",
+          "    LAG(total_wau) OVER (PARTITION BY product_name ORDER BY week_start) AS prev_week_wau\n",
+          "  FROM weekly_wau\n",
+          ")\n",
+          "SELECT\n",
+          "  product_name,\n",
+          "  week_start,\n",
+          "  total_wau,\n",
+          "  prev_week_wau,\n",
+          "  ROUND(\n",
+          "    100.0 * (total_wau - prev_week_wau) / NULLIF(prev_week_wau, 0), 2\n",
+          "  ) AS wow_growth_pct\n",
+          "FROM wow\n",
+          "ORDER BY product_name, week_start"
+        ],
+        "usage_guidance": [
+          "Use for any week-over-week WAU growth or user engagement trend question by product."
+        ]
+      },
+      {
+        "id": "171bb394d3b2ff9db72e1917ceeac0e4",
+        "question": [
+          "What is the pipeline value by opportunity stage for products launched in the last 180 days?"
+        ],
+        "sql": [
+          "SELECT\n",
+          "  p.product_name,\n",
+          "  o.stage,\n",
+          "  COUNT(o.opportunity_id) AS opportunity_count,\n",
+          "  SUM(o.amount) AS total_pipeline_value\n",
+          "FROM CATALOG.SCHEMA.fct_opportunities o\n",
+          "JOIN CATALOG.SCHEMA.dim_products p\n",
+          "  ON o.product_id = p.product_id\n",
+          "WHERE p.launch_date >= CURRENT_DATE - INTERVAL 180 DAYS\n",
+          "GROUP BY p.product_name, o.stage\n",
+          "ORDER BY p.product_name, total_pipeline_value DESC"
+        ],
+        "usage_guidance": [
+          "Use for pipeline analysis by stage for recently launched products."
+        ]
+      },
+      {
+        "id": "189c3069ddf7105b00fc88f5c2e9ad4c",
+        "question": [
+          "What is the total marketing spend, signups, and cost per signup across all channels for campaigns active in 2024?"
+        ],
+        "sql": [
+          "SELECT\n",
+          "  p.product_name,\n",
+          "  mc.channel,\n",
+          "  SUM(mc.impressions) AS total_impressions,\n",
+          "  SUM(mc.clicks) AS total_clicks,\n",
+          "  SUM(mc.signups) AS total_signups,\n",
+          "  SUM(mc.spend) AS total_spend,\n",
+          "  ROUND(SUM(mc.spend) / NULLIF(SUM(mc.signups), 0), 2) AS cost_per_signup\n",
+          "FROM CATALOG.SCHEMA.fct_marketing_campaigns mc\n",
+          "JOIN CATALOG.SCHEMA.dim_products p\n",
+          "  ON mc.product_id = p.product_id\n",
+          "WHERE mc.start_date <= :period_end\n",
+          "  AND mc.end_date >= :period_start\n",
+          "GROUP BY p.product_name, mc.channel\n",
+          "ORDER BY p.product_name, cost_per_signup ASC"
+        ],
+        "parameters": [
+          {
+            "name": "period_end",
+            "type_hint": "DATE",
+            "description": [
+              "End of the period to include campaigns that were active during this window."
+            ],
+            "default_value": {
+              "values": [
+                "2024-12-31"
+              ]
+            }
+          },
+          {
+            "name": "period_start",
+            "type_hint": "DATE",
+            "description": [
+              "Start of the period to include campaigns that were active during this window."
+            ],
+            "default_value": {
+              "values": [
+                "2024-01-01"
+              ]
+            }
+          }
+        ],
+        "usage_guidance": [
+          "Use for marketing efficiency analysis (spend, signups, cost per signup) filtered to a campaign activity window."
+        ]
+      },
+      {
+        "id": "1dcb4f69d0a7b55ffe00a71f8c2c9cfa",
+        "question": [
+          "What is the average NPS score by product for surveys submitted between 2024-01-01 and 2024-06-30?"
+        ],
+        "sql": [
+          "SELECT\n",
+          "  p.product_name,\n",
+          "  COUNT(n.response_id) AS survey_count,\n",
+          "  ROUND(AVG(n.score), 2) AS avg_nps_score\n",
+          "FROM CATALOG.SCHEMA.fct_nps_surveys n\n",
+          "JOIN CATALOG.SCHEMA.fct_accounts a\n",
+          "  ON n.account_id = a.account_id\n",
+          "JOIN CATALOG.SCHEMA.fct_feature_adoption fa\n",
+          "  ON a.account_id = fa.account_id\n",
+          "JOIN CATALOG.SCHEMA.dim_products p\n",
+          "  ON fa.product_id = p.product_id\n",
+          "WHERE n.survey_date BETWEEN :start_date AND :end_date\n",
+          "GROUP BY p.product_name\n",
+          "ORDER BY avg_nps_score DESC"
+        ],
+        "parameters": [
+          {
+            "name": "end_date",
+            "type_hint": "DATE",
+            "description": [
+              "End date (inclusive) for the NPS survey date range filter."
+            ],
+            "default_value": {
+              "values": [
+                "2024-06-30"
+              ]
+            }
+          },
+          {
+            "name": "start_date",
+            "type_hint": "DATE",
+            "description": [
+              "Start date (inclusive) for the NPS survey date range filter."
+            ],
+            "default_value": {
+              "values": [
+                "2024-01-01"
+              ]
+            }
+          }
+        ],
+        "usage_guidance": [
+          "Use when filtering NPS analysis to a specific date range."
+        ]
+      },
+      {
+        "id": "a0e7199a2eef161c989554179db5951c",
+        "question": [
+          "What are the top 10 products by total weekly active users over the last 30 days?"
+        ],
+        "sql": [
+          "SELECT\n",
+          "  p.product_name,\n",
+          "  p.product_tier,\n",
+          "  p.status,\n",
+          "  SUM(fa.weekly_active_users) AS total_wau,\n",
+          "  COUNT(DISTINCT fa.account_id) AS active_accounts\n",
+          "FROM CATALOG.SCHEMA.fct_feature_adoption fa\n",
+          "JOIN CATALOG.SCHEMA.dim_products p\n",
+          "  ON fa.product_id = p.product_id\n",
+          "WHERE fa.event_date >= CURRENT_DATE - INTERVAL :lookback_days DAYS\n",
+          "GROUP BY p.product_name, p.product_tier, p.status\n",
+          "ORDER BY total_wau DESC\n",
+          "LIMIT 10"
+        ],
+        "parameters": [
+          {
+            "name": "lookback_days",
+            "type_hint": "INTEGER",
+            "description": [
+              "Number of calendar days to look back from today when summing weekly active users."
+            ],
+            "default_value": {
+              "values": [
+                "30"
+              ]
+            }
+          }
+        ],
+        "usage_guidance": [
+          "Use for top-N product ranking by WAU over a configurable recent lookback window."
+        ]
+      },
+      {
+        "id": "b570c9394c00be5fe49bfb33f33960c9",
+        "question": [
+          "Which top 5 accounts have the highest ARR and what products are they using?"
+        ],
+        "sql": [
+          "SELECT\n",
+          "  a.account_name,\n",
+          "  a.arr,\n",
+          "  a.plan_tier,\n",
+          "  a.region,\n",
+          "  p.product_name\n",
+          "FROM CATALOG.SCHEMA.fct_accounts a\n",
+          "JOIN CATALOG.SCHEMA.fct_feature_adoption fa\n",
+          "  ON a.account_id = fa.account_id\n",
+          "JOIN CATALOG.SCHEMA.dim_products p\n",
+          "  ON fa.product_id = p.product_id\n",
+          "QUALIFY ROW_NUMBER() OVER (PARTITION BY a.account_id ORDER BY fa.event_date DESC) = 1\n",
+          "ORDER BY a.arr DESC\n",
+          "LIMIT :top_n"
+        ],
+        "parameters": [
+          {
+            "name": "top_n",
+            "type_hint": "INTEGER",
+            "description": [
+              "Number of top accounts to return, ranked by ARR descending."
+            ],
+            "default_value": {
+              "values": [
+                "5"
+              ]
+            }
+          }
+        ],
+        "usage_guidance": [
+          "Use for top-N account ranking by ARR with associated product usage."
+        ]
+      },
+      {
+        "id": "bf47428230c3e8874d35df8511ee2941",
+        "question": [
+          "What is the weekly active user trend for products launched after 2024-01-01?"
+        ],
+        "sql": [
+          "SELECT\n",
+          "  p.product_name,\n",
+          "  p.launch_date,\n",
+          "  DATE_TRUNC('week', fa.event_date) AS week_start,\n",
+          "  SUM(fa.weekly_active_users) AS total_wau\n",
+          "FROM CATALOG.SCHEMA.fct_feature_adoption fa\n",
+          "JOIN CATALOG.SCHEMA.dim_products p\n",
+          "  ON fa.product_id = p.product_id\n",
+          "WHERE p.launch_date >= :launch_date_threshold\n",
+          "GROUP BY p.product_name, p.launch_date, DATE_TRUNC('week', fa.event_date)\n",
+          "ORDER BY p.product_name, week_start"
+        ],
+        "parameters": [
+          {
+            "name": "launch_date_threshold",
+            "type_hint": "DATE",
+            "description": [
+              "Only include products with a launch_date on or after this date."
+            ],
+            "default_value": {
+              "values": [
+                "2024-01-01"
+              ]
+            }
+          }
+        ],
+        "usage_guidance": [
+          "Use when filtering WAU trends to products launched after a specific date."
+        ]
+      },
+      {
+        "id": "d41ede1b10392fa72b480dd576d0ca3a",
+        "question": [
+          "How many support tickets were created per category and priority for the product named 'DataSync Pro' in the last 90 days?"
+        ],
+        "sql": [
+          "SELECT\n",
+          "  st.category,\n",
+          "  st.priority,\n",
+          "  COUNT(st.ticket_id) AS ticket_count,\n",
+          "  ROUND(AVG(st.csat_score), 2) AS avg_csat_score\n",
+          "FROM CATALOG.SCHEMA.fct_support_tickets st\n",
+          "JOIN CATALOG.SCHEMA.dim_products p\n",
+          "  ON st.product_id = p.product_id\n",
+          "WHERE p.product_name = :product_name\n",
+          "  AND st.created_date >= CURRENT_DATE - INTERVAL 90 DAYS\n",
+          "GROUP BY st.category, st.priority\n",
+          "ORDER BY ticket_count DESC"
+        ],
+        "parameters": [
+          {
+            "name": "product_name",
+            "type_hint": "STRING",
+            "description": [
+              "The name of the product to filter support ticket analysis."
+            ],
+            "default_value": {
+              "values": [
+                "DataSync Pro"
+              ]
+            }
+          }
+        ],
+        "usage_guidance": [
+          "Use for support ticket volume and CSAT breakdown by category and priority for a specific product."
+        ]
+      },
+      {
+        "id": "ee0df32979192faf6924995f59cc9481",
+        "question": [
+          "What is the NPS score by product and the quarter-over-quarter NPS change?"
+        ],
+        "sql": [
+          "WITH nps_by_product_quarter AS (\n",
+          "  SELECT\n",
+          "    p.product_name,\n",
+          "    DATE_TRUNC('quarter', n.survey_date) AS survey_quarter,\n",
+          "    AVG(n.score) AS avg_nps\n",
+          "  FROM CATALOG.SCHEMA.fct_nps_surveys n\n",
+          "  JOIN CATALOG.SCHEMA.fct_accounts a\n",
+          "    ON n.account_id = a.account_id\n",
+          "  JOIN CATALOG.SCHEMA.fct_feature_adoption fa\n",
+          "    ON a.account_id = fa.account_id\n",
+          "  JOIN CATALOG.SCHEMA.dim_products p\n",
+          "    ON fa.product_id = p.product_id\n",
+          "  GROUP BY p.product_name, DATE_TRUNC('quarter', n.survey_date)\n",
+          "),\n",
+          "qoq AS (\n",
+          "  SELECT\n",
+          "    product_name,\n",
+          "    survey_quarter,\n",
+          "    avg_nps,\n",
+          "    LAG(avg_nps) OVER (PARTITION BY product_name ORDER BY survey_quarter) AS prev_quarter_nps\n",
+          "  FROM nps_by_product_quarter\n",
+          ")\n",
+          "SELECT\n",
+          "  product_name,\n",
+          "  survey_quarter,\n",
+          "  ROUND(avg_nps, 2) AS avg_nps,\n",
+          "  ROUND(prev_quarter_nps, 2) AS prev_quarter_nps,\n",
+          "  ROUND(avg_nps - prev_quarter_nps, 2) AS qoq_nps_change\n",
+          "FROM qoq\n",
+          "ORDER BY product_name, survey_quarter"
+        ],
+        "usage_guidance": [
+          "Use for NPS trend analysis by product, including quarter-over-quarter NPS change."
+        ]
+      },
+      {
+        "id": "f6eddcb896e48d13edc71562e5033154",
+        "question": [
+          "What is the total pipeline value by opportunity stage for the product named 'DataSync Pro'?"
+        ],
+        "sql": [
+          "SELECT\n",
+          "  o.stage,\n",
+          "  COUNT(o.opportunity_id) AS opportunity_count,\n",
+          "  SUM(o.amount) AS total_pipeline_value,\n",
+          "  ROUND(AVG(o.amount), 2) AS avg_deal_size\n",
+          "FROM CATALOG.SCHEMA.fct_opportunities o\n",
+          "JOIN CATALOG.SCHEMA.dim_products p\n",
+          "  ON o.product_id = p.product_id\n",
+          "WHERE p.product_name = :product_name\n",
+          "GROUP BY o.stage\n",
+          "ORDER BY total_pipeline_value DESC"
+        ],
+        "parameters": [
+          {
+            "name": "product_name",
+            "type_hint": "STRING",
+            "description": [
+              "The name of the product to filter pipeline stage analysis."
+            ],
+            "default_value": {
+              "values": [
+                "DataSync Pro"
+              ]
+            }
+          }
+        ],
+        "usage_guidance": [
+          "Use for pipeline funnel analysis scoped to a single named product."
+        ]
+      }
+    ],
+    "join_specs": [
+      {
+        "id": "2af79fa1870a1d7213de810808a56e7d",
+        "left": {
+          "identifier": "CATALOG.SCHEMA.fct_feature_adoption",
+          "alias": "fct_feature_adoption"
+        },
+        "right": {
+          "identifier": "CATALOG.SCHEMA.fct_accounts",
+          "alias": "fct_accounts"
+        },
+        "sql": [
+          "`fct_feature_adoption`.`account_id` = `fct_accounts`.`account_id`",
+          "--rt=FROM_RELATIONSHIP_TYPE_MANY_TO_ONE--"
+        ]
+      },
+      {
+        "id": "3b1e4cc39b1d2b1dac6bc65d0ab28391",
+        "left": {
+          "identifier": "CATALOG.SCHEMA.fct_support_tickets",
+          "alias": "fct_support_tickets"
+        },
+        "right": {
+          "identifier": "CATALOG.SCHEMA.dim_products",
+          "alias": "dim_products"
+        },
+        "sql": [
+          "`fct_support_tickets`.`product_id` = `dim_products`.`product_id`",
+          "--rt=FROM_RELATIONSHIP_TYPE_MANY_TO_ONE--"
+        ]
+      },
+      {
+        "id": "427111da2b3a3d5bc4d3f243b6ab8e74",
+        "left": {
+          "identifier": "CATALOG.SCHEMA.fct_opportunities",
+          "alias": "fct_opportunities"
+        },
+        "right": {
+          "identifier": "CATALOG.SCHEMA.dim_products",
+          "alias": "dim_products"
+        },
+        "sql": [
+          "`fct_opportunities`.`product_id` = `dim_products`.`product_id`",
+          "--rt=FROM_RELATIONSHIP_TYPE_MANY_TO_ONE--"
+        ]
+      },
+      {
+        "id": "6957aa8a38fe1ab6c5afb8deceba0c48",
+        "left": {
+          "identifier": "CATALOG.SCHEMA.fct_feature_adoption",
+          "alias": "fct_feature_adoption"
+        },
+        "right": {
+          "identifier": "CATALOG.SCHEMA.dim_products",
+          "alias": "dim_products"
+        },
+        "sql": [
+          "`fct_feature_adoption`.`product_id` = `dim_products`.`product_id`",
+          "--rt=FROM_RELATIONSHIP_TYPE_MANY_TO_ONE--"
+        ]
+      },
+      {
+        "id": "e4cd12ffc06d0845f51cabe47debb57c",
+        "left": {
+          "identifier": "CATALOG.SCHEMA.fct_nps_surveys",
+          "alias": "fct_nps_surveys"
+        },
+        "right": {
+          "identifier": "CATALOG.SCHEMA.fct_accounts",
+          "alias": "fct_accounts"
+        },
+        "sql": [
+          "`fct_nps_surveys`.`account_id` = `fct_accounts`.`account_id`",
+          "--rt=FROM_RELATIONSHIP_TYPE_MANY_TO_ONE--"
+        ]
+      }
+    ],
+    "sql_snippets": {
+      "filters": [
+        {
+          "id": "2d84db18821565b7c205918ec83c1073",
+          "sql": [
+            "CATALOG.SCHEMA.fct_opportunities.stage NOT IN ('Closed Won', 'Closed Lost')"
+          ],
+          "display_name": "Open Pipeline Opportunities"
+        },
+        {
+          "id": "7c003c711f80c7bad2b361f206980b32",
+          "sql": [
+            "CATALOG.SCHEMA.dim_products.launch_date >= CURRENT_DATE - INTERVAL 180 DAYS"
+          ],
+          "display_name": "Recently Launched Products (Last 180 Days)"
+        },
+        {
+          "id": "847fd2e4c46df31a89486351223d65e6",
+          "sql": [
+            "CATALOG.SCHEMA.fct_feature_adoption.event_date >= CURRENT_DATE - INTERVAL 90 DAYS"
+          ],
+          "display_name": "Last 90 Days (Feature Adoption)"
+        },
+        {
+          "id": "d2e340df4b5e79d3ef9656767036348f",
+          "sql": [
+            "CATALOG.SCHEMA.dim_products.status = 'active'"
+          ],
+          "display_name": "Active Products Only"
+        }
+      ],
+      "expressions": [
+        {
+          "id": "887815c81ad6101ab8792f3fc47e35e1",
+          "alias": "nps_category",
+          "sql": [
+            "CASE WHEN CATALOG.SCHEMA.fct_nps_surveys.score >= 9 THEN 'Promoter' WHEN CATALOG.SCHEMA.fct_nps_surveys.score >= 7 THEN 'Passive' ELSE 'Detractor' END"
+          ],
+          "display_name": "NPS Category"
+        },
+        {
+          "id": "eebc8391876c02cfd0b45c35b5190a7f",
+          "alias": "survey_quarter",
+          "sql": [
+            "CONCAT(YEAR(CATALOG.SCHEMA.fct_nps_surveys.survey_date), '-Q', QUARTER(CATALOG.SCHEMA.fct_nps_surveys.survey_date))"
+          ],
+          "display_name": "Survey Quarter (YYYY-Q#)"
+        },
+        {
+          "id": "f134ca531766d9d6e39260e24d5455c9",
+          "alias": "event_year_week",
+          "sql": [
+            "DATE_TRUNC('week', CATALOG.SCHEMA.fct_feature_adoption.event_date)"
+          ],
+          "display_name": "Event Week Start Date"
+        }
+      ],
+      "measures": [
+        {
+          "id": "013ec97875c7265f20d2f8a5d2ea1211",
+          "alias": "total_pipeline_value",
+          "sql": [
+            "SUM(CATALOG.SCHEMA.fct_opportunities.amount)"
+          ],
+          "display_name": "Total Pipeline Value"
+        },
+        {
+          "id": "057bed570a5c09bc7b135753d56e4102",
+          "alias": "avg_nps_score",
+          "sql": [
+            "AVG(CATALOG.SCHEMA.fct_nps_surveys.score)"
+          ],
+          "display_name": "Average NPS Score"
+        },
+        {
+          "id": "0b38795ca797945cc36490273109af2d",
+          "alias": "bug_ticket_count",
+          "sql": [
+            "COUNT(CASE WHEN CATALOG.SCHEMA.fct_support_tickets.category = 'bug' THEN CATALOG.SCHEMA.fct_support_tickets.ticket_id END)"
+          ],
+          "display_name": "Bug Ticket Count"
+        },
+        {
+          "id": "60afb8e7b7bad33804dee97c844ab3ee",
+          "alias": "total_weekly_active_users",
+          "sql": [
+            "SUM(CATALOG.SCHEMA.fct_feature_adoption.weekly_active_users)"
+          ],
+          "display_name": "Total Weekly Active Users"
+        },
+        {
+          "id": "c512ca8a01a7ee22f547fd2350f712e6",
+          "alias": "cost_per_signup",
+          "sql": [
+            "SUM(CATALOG.SCHEMA.fct_marketing_campaigns.spend) / NULLIF(SUM(CATALOG.SCHEMA.fct_marketing_campaigns.signups), 0)"
+          ],
+          "display_name": "Cost Per Signup"
+        }
+      ]
+    }
+  },
+  "benchmarks": {
+    "questions": [
+      {
+        "id": "e5cef7ea78a6f825f8b9db908e57b095",
+        "question": [
+          "What is the quarter-over-quarter change in average NPS score by product?"
+        ],
+        "answer": [
+          {
+            "format": "SQL",
+            "content": [
+              "WITH quarterly_nps AS (\n",
+              "  SELECT\n",
+              "    p.product_name,\n",
+              "    DATE_TRUNC('quarter', n.survey_date) AS survey_quarter,\n",
+              "    AVG(n.score) AS avg_nps\n",
+              "  FROM CATALOG.SCHEMA.fct_nps_surveys n\n",
+              "  JOIN CATALOG.SCHEMA.fct_accounts a\n",
+              "    ON n.account_id = a.account_id\n",
+              "  JOIN CATALOG.SCHEMA.fct_opportunities o\n",
+              "    ON a.account_id = o.account_id\n",
+              "  JOIN CATALOG.SCHEMA.dim_products p\n",
+              "    ON o.product_id = p.product_id\n",
+              "  GROUP BY p.product_name, DATE_TRUNC('quarter', n.survey_date)\n",
+              ")\n",
+              "SELECT\n",
+              "  product_name,\n",
+              "  survey_quarter,\n",
+              "  avg_nps,\n",
+              "  LAG(avg_nps) OVER (PARTITION BY product_name ORDER BY survey_quarter) AS prev_quarter_nps,\n",
+              "  avg_nps - LAG(avg_nps) OVER (PARTITION BY product_name ORDER BY survey_quarter) AS qoq_nps_change\n",
+              "FROM quarterly_nps\n",
+              "ORDER BY product_name, survey_quarter"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "e0893371f820fc10c2c48088319afe4d",
+        "question": [
+          "What is the total pipeline value by stage and product for open opportunities?"
+        ],
+        "answer": [
+          {
+            "format": "SQL",
+            "content": [
+              "SELECT\n",
+              "  p.product_name,\n",
+              "  o.stage,\n",
+              "  SUM(o.amount) AS total_pipeline_value,\n",
+              "  COUNT(o.opportunity_id) AS opportunity_count\n",
+              "FROM CATALOG.SCHEMA.fct_opportunities o\n",
+              "JOIN CATALOG.SCHEMA.dim_products p\n",
+              "  ON o.product_id = p.product_id\n",
+              "WHERE o.stage NOT IN ('Closed Won', 'Closed Lost')\n",
+              "GROUP BY p.product_name, o.stage\n",
+              "ORDER BY p.product_name, total_pipeline_value DESC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "d3a9facd70a95195657b64e2611b75b6",
+        "question": [
+          "Which products have the highest total weekly active users in the last 30 days?"
+        ],
+        "answer": [
+          {
+            "format": "SQL",
+            "content": [
+              "SELECT\n",
+              "  p.product_name,\n",
+              "  SUM(fa.weekly_active_users) AS total_wau\n",
+              "FROM CATALOG.SCHEMA.fct_feature_adoption fa\n",
+              "JOIN CATALOG.SCHEMA.dim_products p\n",
+              "  ON fa.product_id = p.product_id\n",
+              "WHERE fa.event_date >= CURRENT_DATE - INTERVAL 30 DAYS\n",
+              "GROUP BY p.product_name\n",
+              "ORDER BY total_wau DESC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "6eefb429ce7ae2da48f2c6a1476f378a",
+        "question": [
+          "What is the cost per signup by channel for each product?"
+        ],
+        "answer": [
+          {
+            "format": "SQL",
+            "content": [
+              "SELECT\n",
+              "  p.product_name,\n",
+              "  mc.channel,\n",
+              "  SUM(mc.spend) AS total_spend,\n",
+              "  SUM(mc.signups) AS total_signups,\n",
+              "  ROUND(SUM(mc.spend) / NULLIF(SUM(mc.signups), 0), 2) AS cost_per_signup\n",
+              "FROM CATALOG.SCHEMA.fct_marketing_campaigns mc\n",
+              "JOIN CATALOG.SCHEMA.dim_products p\n",
+              "  ON mc.product_id = p.product_id\n",
+              "GROUP BY p.product_name, mc.channel\n",
+              "ORDER BY p.product_name, cost_per_signup"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "698929e3ab506283dffa6b96de1e66a5",
+        "question": [
+          "What is the total pipeline value by opportunity stage for products launched in the last 180 days?"
+        ],
+        "answer": [
+          {
+            "format": "SQL",
+            "content": [
+              "SELECT\n",
+              "  o.stage,\n",
+              "  SUM(o.amount) AS total_pipeline_value\n",
+              "FROM CATALOG.SCHEMA.fct_opportunities o\n",
+              "JOIN CATALOG.SCHEMA.dim_products p\n",
+              "  ON o.product_id = p.product_id\n",
+              "WHERE p.launch_date >= CURRENT_DATE - INTERVAL 180 DAYS\n",
+              "GROUP BY o.stage\n",
+              "ORDER BY total_pipeline_value DESC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "4a39f37ff8f7aef8c5314bd2a1b48fd8",
+        "question": [
+          "What is the total marketing spend and number of signups by channel across all products?"
+        ],
+        "answer": [
+          {
+            "format": "SQL",
+            "content": [
+              "SELECT channel, SUM(spend) AS total_spend, SUM(signups) AS total_signups FROM CATALOG.SCHEMA.fct_marketing_campaigns GROUP BY channel ORDER BY total_spend DESC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "3fd54091808c979fc94569e235d6d226",
+        "question": [
+          "What share of support tickets are bug-related for each product in the first 3 weeks after launch?"
+        ],
+        "answer": [
+          {
+            "format": "SQL",
+            "content": [
+              "SELECT\n",
+              "  p.product_name,\n",
+              "  COUNT(*) AS total_tickets,\n",
+              "  SUM(CASE WHEN st.category = 'Bug' THEN 1 ELSE 0 END) AS bug_tickets,\n",
+              "  ROUND(100.0 * SUM(CASE WHEN st.category = 'Bug' THEN 1 ELSE 0 END) / COUNT(*), 2) AS bug_ticket_pct\n",
+              "FROM CATALOG.SCHEMA.fct_support_tickets st\n",
+              "JOIN CATALOG.SCHEMA.dim_products p\n",
+              "  ON st.product_id = p.product_id\n",
+              "WHERE st.created_date BETWEEN p.launch_date AND p.launch_date + INTERVAL 21 DAYS\n",
+              "GROUP BY p.product_name\n",
+              "ORDER BY bug_ticket_pct DESC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "1e6b0bac473b6c10474f1c6caae9d706",
+        "question": [
+          "How many support tickets were created per product in the first 3 weeks after launch, broken down by priority?"
+        ],
+        "answer": [
+          {
+            "format": "SQL",
+            "content": [
+              "SELECT\n",
+              "  p.product_name,\n",
+              "  st.priority,\n",
+              "  COUNT(st.ticket_id) AS ticket_count\n",
+              "FROM CATALOG.SCHEMA.fct_support_tickets st\n",
+              "JOIN CATALOG.SCHEMA.dim_products p\n",
+              "  ON st.product_id = p.product_id\n",
+              "WHERE st.created_date BETWEEN p.launch_date AND p.launch_date + INTERVAL 21 DAYS\n",
+              "GROUP BY p.product_name, st.priority\n",
+              "ORDER BY p.product_name, ticket_count DESC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "09b550eddcf6b8ed17d72a75a794fcd7",
+        "question": [
+          "What is the week-over-week change in weekly active users by product over the last 90 days?"
+        ],
+        "answer": [
+          {
+            "format": "SQL",
+            "content": [
+              "WITH weekly_wau AS (\n",
+              "  SELECT\n",
+              "    p.product_name,\n",
+              "    DATE_TRUNC('week', fa.event_date) AS week_start,\n",
+              "    SUM(fa.weekly_active_users) AS wau\n",
+              "  FROM CATALOG.SCHEMA.fct_feature_adoption fa\n",
+              "  JOIN CATALOG.SCHEMA.dim_products p\n",
+              "    ON fa.product_id = p.product_id\n",
+              "  WHERE fa.event_date >= CURRENT_DATE - INTERVAL 90 DAYS\n",
+              "  GROUP BY p.product_name, DATE_TRUNC('week', fa.event_date)\n",
+              ")\n",
+              "SELECT\n",
+              "  product_name,\n",
+              "  week_start,\n",
+              "  wau,\n",
+              "  LAG(wau) OVER (PARTITION BY product_name ORDER BY week_start) AS prev_week_wau,\n",
+              "  wau - LAG(wau) OVER (PARTITION BY product_name ORDER BY week_start) AS wow_change\n",
+              "FROM weekly_wau\n",
+              "ORDER BY product_name, week_start"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "00f34c39624e5a7249fc870961ee982e",
+        "question": [
+          "What is the average NPS score by product?"
+        ],
+        "answer": [
+          {
+            "format": "SQL",
+            "content": [
+              "SELECT\n",
+              "  p.product_name,\n",
+              "  ROUND(AVG(n.score), 2) AS avg_nps_score,\n",
+              "  COUNT(n.response_id) AS response_count\n",
+              "FROM CATALOG.SCHEMA.fct_nps_surveys n\n",
+              "JOIN CATALOG.SCHEMA.fct_accounts a\n",
+              "  ON n.account_id = a.account_id\n",
+              "JOIN CATALOG.SCHEMA.fct_opportunities o\n",
+              "  ON a.account_id = o.account_id\n",
+              "JOIN CATALOG.SCHEMA.dim_products p\n",
+              "  ON o.product_id = p.product_id\n",
+              "GROUP BY p.product_name\n",
+              "ORDER BY avg_nps_score DESC"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
